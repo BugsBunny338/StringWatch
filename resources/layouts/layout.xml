@@ -1,0 +1,4 @@
+<layout id="WatchFace">
+    <label id="HoursLabel" x="10" y="85" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+    <label id="MinutesLabel" x="10" y="115" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+</layout>
