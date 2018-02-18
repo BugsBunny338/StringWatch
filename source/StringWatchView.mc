@@ -108,6 +108,10 @@ class StringWatchView extends Ui.WatchFace {
         } else {
             hoursView.setText(hoursString);
             minutesView.setText(minutesString);
+
+            // longest possible combination
+            // hoursView.setText("dvacet jedna");
+            // minutesView.setText("čtyřicet čtyři");
         }
 
         // hours tests (should be removed by the compiler when building release code)
