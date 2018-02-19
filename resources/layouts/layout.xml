@@ -1,4 +1,11 @@
-<layout id="WatchFace">
-    <label id="HoursLabel" x="230" y="80" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_BLUE" />
-    <label id="MinutesLabel" x="230" y="115" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
-</layout>
+<resources>
+    <layout id="WatchFaceFenix5">
+        <label id="HoursLabel" x="230" y="80" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_BLUE" />
+        <label id="MinutesLabel" x="230" y="115" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+    </layout>
+
+    <layout id="WatchFaceFenix3">
+        <label id="HoursLabel" x="208" y="69" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_RED" />
+        <label id="MinutesLabel" x="208" y="104" font="Gfx.FONT_SYSTEM_LARGE" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+    </layout>
+</resources>
