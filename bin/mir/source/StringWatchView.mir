@@ -1,0 +1,107 @@
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 3; ]
+import Toybox.System;
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 6; ]
+class StringWatchView extends WatchUi.WatchFace{
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 8; ]
+    function initialize() as Void {
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_8_26_10_4_start:
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 9 8 ]
+        %tmp.2 = getv ? :WatchFace;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_8_26_10_4_stop:
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 13; ]
+    function onLayout(dc as Dc) as Void {
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_13_40_15_4_start:
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 14 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        %tmp.4 = getv ? :Rez;
+        %tmp.5 = getv %tmp.4 :Layouts;
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        invoke %tmp.1 %tmp.2(%tmp.9);
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_13_40_15_4_stop:
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 20; ]
+    function onShow() as Void {
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 24; ]
+    function onUpdate(dc as Dc) as Void {
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_start:
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 26 8 ]
+        [ "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_start" "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_stop" ]
+        %clockTime.1 = local;
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 27 8 ]
+        [ "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_start" "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_stop" ]
+        %timeString.2 = local;
+        %tmp.4 = getm $.Toybox.Lang;
+        %tmp.5 = getv function %tmp.4 :format;
+        %tmp.6 = "$1$:$2$";
+        %tmp.7 = newa 2;
+        %tmp.8 = lgetv %clockTime.1;
+        %tmp.9 = getv %tmp.8 :hour;
+        %tmp.10 = dup %tmp.7;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = lgetv %clockTime.1;
+        %tmp.13 = getv %tmp.12 :min;
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "%02d";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        %tmp.17 = dup %tmp.11;
+        %tmp.18 = aputv %tmp.17 1 %tmp.16;
+        %tmp.19 = invoke %tmp.4 %tmp.5(%tmp.6, %tmp.18);
+        lputv %timeString.2 %tmp.19;
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 28 8 ]
+        [ "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_start" "_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_stop" ]
+        %view.3 = local;
+        %tmp.21 = getv ? :View;
+        %tmp.22 = getv function %tmp.21 :findDrawableById;
+        %tmp.23 = "TimeLabel";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        %tmp.25 = as %tmp.24 Text;
+        lputv %view.3 %tmp.25;
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 29 8 ]
+        %tmp.26 = lgetv %view.3;
+        %tmp.27 = getv function %tmp.26 :setText;
+        %tmp.29 = lgetv %timeString.2;
+        invoke %tmp.26 %tmp.27(%tmp.29);
+[ "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc" 32 8 ]
+        %tmp.31 = getv ? :View;
+        %tmp.32 = getv function %tmp.31 :onUpdate;
+        %tmp.34 = lgetv %dc;
+        invoke %tmp.31 %tmp.32(%tmp.34);
+_Users_bugsbunny_prj_StringWatch_source_StringWatchView_mc_24_40_33_4_stop:
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 38; ]
+    function onHide() as Void {
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 42; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 46; ]
+    function onEnterSleep() as Void {
+    }
+}
+[ @file = "/Users/bugsbunny/prj/StringWatch/source/StringWatchView.mc"; @line = 1; ]
+<init> {
+}
